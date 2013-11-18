@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js" type = 'text/javascript'></script>
+
+ <script type = 'text/javascript'>
+   
+  function initialize() {
+            getLocation();
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            }
+            else { x.innerHTML = "Geolocation is not supported by this browser."; }
+        }
+
+        function showPosition(position) {
+
+                latitude = (position.coords.latitude).toFixed(6);
+                longitude = (position.coords.longitude).toFixed(6);
+
+                document.getElementById('position').innerHTML = "Din position är Latitude: " + latitude + " Longitude: " + longitude;
+         
+        }
+</script>
+
+
+<title>Hello</title></head>
+<body onload="initialize()">
+<p>Hello</p>
+<button id="hello">hej</button>
+<p id="position"/>
+</body>
+
+</html>
